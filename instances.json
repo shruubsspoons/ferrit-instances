@@ -5,6 +5,16 @@
       "url": "https://fr.vern.cc",
       "country": "CA",
       "version": "v0.1.0"
+    },
+    {
+      "onion": "http://fr.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion",
+      "country": "CA",
+      "version": "v0.1.0"
+    },
+    {
+      "onion": "http://ferrit.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion",
+      "country": "CA",
+      "version": "v0.1.0"
     }
   ]
 }
