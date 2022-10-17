@@ -32,9 +32,13 @@ TODAY="$(date -I -u)"
 # jq is required for JSON processing.
 DEPENDENCIES=(curl jq)
 
+# This is the default User-Agent the script will tell curl to use if the
+# environment variable USER_AGENT is not defined.
+DEFAULT_USER_AGENT="ferrit-instance-updater/0.1"
+
 # If USER_AGENT is specified in the envs, we'll pass this argument to curl
 # using the -A flag to set a custom User-Agent.
-USER_AGENT="${USER_AGENT:-}"
+USER_AGENT="${USER_AGENT:-${DEFAULT_USER_AGENT}}"
 
 # HTTP proxy for connecting to nodes on I2P. This is an environment variable.
 I2P_HTTP_PROXY="${I2P_HTTP_PROXY:-}"
@@ -585,12 +589,14 @@ OPTIONS
 ENVIRONMENT
 
     USER_AGENT
-        Sets the User-Agent that curl will use when making the GET to each website.
+        Sets the User-Agent that curl will use when making the GET to each
+        website. By default, this script will tell curl to set its User-Agent
+        string to "${DEFAULT_USER_AGENT}".
 
     I2P_HTTP_PROXY
         HTTP proxy for connecting to the I2P network. This is required in
-        order to connect to instances on I2P. If -I is provided, the value in this
-        variable is ignored.
+        order to connect to instances on I2P. If -I is provided, the value in
+        this variable is ignored.
 !
 }
 

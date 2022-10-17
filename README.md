@@ -93,12 +93,14 @@ OPTIONS
 ENVIRONMENT
 
     USER_AGENT
-        Sets the User-Agent that curl will use when making the GET to each website.
+        Sets the User-Agent that curl will use when making the GET to each
+        website. By default, this script will tell curl to set its User-Agent
+        string to "ferrit-instance-updater/0.1".
 
     I2P_HTTP_PROXY
         HTTP proxy for connecting to the I2P network. This is required in
-        order to connect to instances on I2P. If -I is provided, the value in this
-        variable is ignored.
+        order to connect to instances on I2P. If -I is provided, the value in
+        this variable is ignored.
 ```
 
 ### Prerequisites
