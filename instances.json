@@ -25,6 +25,11 @@
       "url": "https://fr.matthew.science",
       "country": "US",
       "version": "v0.1.0"
+    },
+    {
+      "url": "https://ferrit.drivet.xyz",
+      "country": "FR",
+      "version": "v0.1.0"
     }
   ]
 }
