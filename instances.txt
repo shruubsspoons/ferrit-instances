@@ -1,6 +1,6 @@
 https://fr.vern.cc,CA,false,""
 https://fr.matthew.science,US,false,""
-https://fr.odyssey346.dev,FR,false,""
+https://fr.odyssey346.dev,FR/PL/SE,false,""
 https://ferrit.drivet.xyz,FR,false,""
 http://fr.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion,CA,false,""
 http://ferrit.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion,CA,false,""
