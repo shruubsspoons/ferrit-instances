@@ -2,7 +2,17 @@
 
 This repository maintains a list of [Ferrit](https://github.com/ferritreader/ferrit) instances in JSON format, providing the URL, location, and Ferrit version for each instance. A helper script exists in this repository to generate the list in JSON form.
 
-# Contents
+## Contributing
+
+To contribute new instances to this repo:
+
+1. familiarize yourself with the repo 
+  - learn its structure by reading the section [Contents](#contents)
+  - learn how to generate the `instances.json` file in the sections [Adding or removing an instance](#adding-or-removing-an-instance) and [`generate-instances-json.sh`](#generate-instances-jsonsh)
+1. [fork the repo](/fork), and in your fork make your additions to `instances.txt` and generate a new `instances.json`
+1. [open a PR](/compare) from your fork to the main repo
+
+## Contents
 
 This repo consists of four files:
 
@@ -11,7 +21,7 @@ This repo consists of four files:
 1. `instances.txt`: This is a CSV of Ferrit instances. While this is also machine-readable, it is recommended to use `instances.json` instead. `instances.txt` is meant for contributors to add and remove instances, and `generate-instances-json.sh` will validate those instances and generate `instances.json`.
 1. `generate-instances-json.sh`: This script takes in a CSV file as input, typically `instances.txt`, and outputs a JSON object with a list of Ferrit instances. This is the script that generates `instances.json`.
 
-## Adding or removing an instance
+### Adding or removing an instance
 
 To generate `instances.json`, perform the following:
 
@@ -20,13 +30,13 @@ To generate `instances.json`, perform the following:
 
 Pull requests to add or remove instances are always welcome.
 
-## `generate-instances-json.sh`
+### `generate-instances-json.sh`
 
 `generate-instances-json.sh` is the script that produces a JSON of [Ferrit](https://github.com/ferritreader/ferrit) instances, given a CSV input of Ferrit instances.
 
 Unless `-i` and `-o` are specified (see [Usage](#Usage) below), the input and output are assumed the stdin and stdout streams respectively.
 
-### Usage
+#### Usage
 
 ```
 USAGE
@@ -103,13 +113,13 @@ ENVIRONMENT
         this variable is ignored.
 ```
 
-### Prerequisites
+#### Prerequisites
 
 `generate-instances-json.sh` requires **curl** in order to make HTTP(S) requests and **jq** to process and format JSON.
 
 **tor** and **torsocks** are required for processing onion sites, but the script will skip instances on Tor if neither tor is running nor torsocks is available. An option exists to import onion sites from an existing JSON file should you wish not to use tor.
 
-### Expected CSV format
+#### Expected CSV format
 
 The CSV must take on the form:
 
@@ -123,7 +133,7 @@ Each field described:
 - **cloudflare enabled** (REQUIRED): A boolean; true if the instance sits behind Cloudflare.
 - **description** (REQUIRED): A description of the instance; a description can be blank, but one must be provided for the script to parse the CSV correctly. **As this description string becomes a JSON value without any transformation, any special characters, including and especially newlines, must be escaped.**
 
-### Processing the CSV
+#### Processing the CSV
 
 The script will process the CSV and for each row connect to the URL and get the version string of the running instance. For each row, if the connection is successful and the script can determine the version, it will yield a JSON object (an "entry") of the form:
 
@@ -147,18 +157,18 @@ At the end, the script will assemble the entries into a JSON array and place the
 
 If all instances could be processed, the script exits with an exit code of 0. If the script was unable to process an instance, it will continue processing other instances, but the exit code will be 1. If there was an error to do with processing the CSV, the exit code is 2.
 
-### Instances on Tor or I2P
+#### Instances on Tor or I2P
 
 This script will attempt to connect to instances that are onion or I2P sites. 
 
-#### Tor
+##### Tor
 
 To make sure it can connect to onion sites, the script will see if Tor is running and if torsocks is installed. If neither condition is met, the script will not attempt to connect to Ferrit onion sites and will skip them. The exit code will still be 0, assuming that the WWW Ferrit sites were processed without error.
 
-#### I2P
+##### I2P
 
 In order to allow the script to connect to I2P, you must specify a proxy host and port in the environment variable `I2P_HTTP_PROXY`. This is typically 127.0.0.1:4444, unless your proxy listens on a separate address and/or port. If this environment variable is not defined or it is empty, the script will not attempt to connect to Ferrit I2P sites and will skip them. The exit code will still be 0, assuming that the WWW Ferrit sites were processed without error.
 
-# License
+## License
 
 The script `generate-instances-json.sh` and the schema file `instances-schema.json` are licensed under [the GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html). `instances.json` and `instances.txt` are released to the public domain.
