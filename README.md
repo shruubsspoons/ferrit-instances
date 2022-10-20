@@ -9,8 +9,8 @@ To contribute new instances to this repo:
 1. familiarize yourself with the repo 
   - learn its structure by reading the section [Contents](#contents)
   - learn how to generate the `instances.json` file in the sections [Adding or removing an instance](#adding-or-removing-an-instance) and [`generate-instances-json.sh`](#generate-instances-jsonsh)
-1. [fork the repo](/fork), and in your fork make your additions to `instances.txt` and generate a new `instances.json`
-1. [open a PR](/compare) from your fork to the main repo
+1. [fork the repo](https://github.com/ferritreader/ferrit-instances/fork), and in your fork make your additions to `instances.txt` and generate a new `instances.json`
+1. [open a PR](https://github.com/ferritreader/ferrit-instances/compare) from your fork to the main repo
 
 ## Contents
 
