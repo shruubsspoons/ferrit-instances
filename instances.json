@@ -1,5 +1,5 @@
 {
-  "updated": "2022-10-17",
+  "updated": "2022-10-20",
   "instances": [
     {
       "url": "https://fr.vern.cc",
@@ -13,7 +13,7 @@
     },
     {
       "url": "https://fr.odyssey346.dev",
-      "country": "FR",
+      "country": "FR/PL/SE",
       "version": "v0.1.0"
     },
     {
